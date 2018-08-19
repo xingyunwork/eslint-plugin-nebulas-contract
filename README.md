@@ -7,10 +7,12 @@ yarn test
 
 ##
 
-1. no-async
+*   no-async     setTimeout setInterval
 
-setTimeout setInterval
+*   no-window
 
-2. no-window
+*   no-proxy
 
-2. no-proxy
+*   module init
+
+*   no-import

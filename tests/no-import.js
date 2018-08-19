@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for no-window rule.
+ * @fileoverview Tests for no-import rule.
  * @author yucopowo@gmail.com
  */
 
@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../rules/no-window");
+const rule = require("../rules/no-import");
 const RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
@@ -18,19 +18,17 @@ const RuleTester = require("eslint").RuleTester;
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-window", rule, {
+ruleTester.run("no-import", rule, {
     valid: [
-        "function Test(){}",
+        "var crypto = require('crypto.js');",
     ],
     invalid: [
         {
-            code: "var a=window.name;",
+            code: "import crypto from 'crypto.js'",
             errors: [{
-                column: 7,
-                line: 1,
-                message: "Avoid using window",
-                type: "MemberExpression",
+                message: 'Unexpected import.'
             }],
+            parser: 'babel-eslint'
         }
     ],
 });
