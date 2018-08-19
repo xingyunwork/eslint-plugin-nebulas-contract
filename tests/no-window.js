@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../rules/no-async");
+const rule = require("../rules/no-window");
 const RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
@@ -18,27 +18,19 @@ const RuleTester = require("eslint").RuleTester;
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-async", rule, {
+ruleTester.run("no-window", rule, {
     valid: [
         "function Test(){}",
     ],
     invalid: [
         {
-            code: "var a=1;\nsetTimeout(function(){  }, 100);",
+            code: "var a=window.name;",
             errors: [{
-                column: 1,
-                line: 2,
-                message: "Unexpected setTimeout.",
-                type: "CallExpression",
+                column: 7,
+                line: 1,
+                message: "Avoid using window",
+                type: "MemberExpression",
             }],
-        },
-        {
-            code: "var a=1;\nsetTimeout(() => {}, 100);",
-            errors: [{
-                message: "Unexpected setTimeout.",
-                type: "CallExpression",
-            }],
-            parser: 'babel-eslint'
-        },
+        }
     ],
 });

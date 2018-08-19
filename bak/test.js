@@ -18,7 +18,7 @@
 
 const assert = require('assert');
 const eslint = require('eslint');
-const conf = require('../');
+const conf = require('../index');
 
 // The source files to lint.
 const repoFiles = [
