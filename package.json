@@ -4,12 +4,13 @@
   "description": "ESLint shareable config for the Nebulas smart contract style",
   "license": "MIT",
   "repository": "https://github.com/xingyunwork/eslint-config-nebulas-contract",
-  "author": "yucopowo@gmail.com",
+  "author": "yucopowo <yucopowo@gmail.com>",
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "lint": "eslint .",
+    "test": "mocha tests/**/*.js"
   },
   "files": [
     "index.js"
@@ -25,7 +26,10 @@
     "eslint"
   ],
   "devDependencies": {
-    "eslint": "^4.1.1"
+    "eslint": "^4.1.1",
+    "eslint-config-eslint": "^3.0.0",
+    "eslint-plugin-node": "^4.0.1",
+    "mocha": "^3.1.0"
   },
   "peerDependencies": {
     "eslint": ">=4.1.1"

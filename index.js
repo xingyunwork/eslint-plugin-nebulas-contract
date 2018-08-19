@@ -2,7 +2,8 @@
 
 module.exports = {
     rules: {
-        'no-setinterval': require('./rules/no-setinterval'),
+        "no-jquery": require('./rules/no-jquery'),
+        'no-setinterval': require('./scripts/no-setinterval'),
     },
     configs: {
         recommended: {
