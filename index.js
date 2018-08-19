@@ -2,11 +2,11 @@
 
 module.exports = {
     rules: {
-        "available-libs": require('../rules/available-libs'),
-        "no-async": require('../rules/no-async'),
-        "no-import": require('../rules/no-import'),
-        "no-proxy": require('../rules/no-proxy'),
-        "no-window": require('../rules/no-window'),
+        "available-libs": require('./rules/available-libs'),
+        "no-async": require('./rules/no-async'),
+        "no-import": require('./rules/no-import'),
+        "no-proxy": require('./rules/no-proxy'),
+        "no-window": require('./rules/no-window'),
     },
     rulesConfig: {
         'param-names': 1,

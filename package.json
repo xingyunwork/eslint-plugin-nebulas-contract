@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-nebulas-contract",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ESLint shareable config for the Nebulas smart contract style",
   "license": "MIT",
   "repository": "https://github.com/xingyunwork/eslint-plugin-nebulas-contract",
