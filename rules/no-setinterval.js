@@ -7,8 +7,11 @@
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
+const astUtils = require("eslint/lib/ast-utils");
 
-const getPropertyName = require("../util/ast-utils").getStaticPropertyName;
+// console.log(astUtils);
+const getPropertyName = astUtils.getPropertyName;
+// const getPropertyName = require("../util/ast-utils").getStaticPropertyName;
 // import { getPropertyName } from "eslint/util/ast-utils";
 // const getPropertyName = require("eslint/lib/util/ast-utils").getStaticPropertyName;
 
