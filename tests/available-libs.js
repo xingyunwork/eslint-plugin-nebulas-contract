@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for no-proxy rule.
+ * @fileoverview Tests for available-libs rule.
  * @author yucopowo@gmail.com
  */
 
@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../rules/no-proxy");
+const rule = require("../rules/available-libs");
 const RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
@@ -18,17 +18,17 @@ const RuleTester = require("eslint").RuleTester;
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-proxy", rule, {
+ruleTester.run("available-libs", rule, {
     valid: [
-        "function Test(){}",
+        "var crypto = require('crypto.js');\nfunction Test(){}",
     ],
     invalid: [
         {
-            code: "var o = {name: 1};\nvar p = new Proxy(o,{get: function(target, prop, receiver){return target['name'];}});",
+            code: "var another = require('another.js');",
             errors: [{
-                ruleId: 'no-proxy',
-                message: "Unallowed use of `Proxy`",
-                type: "Identifier",
+                ruleId: 'available-libs',
+                message: "Available libraries are crypto.js",
+                type: "CallExpression",
             }],
         }
     ],
