@@ -17,7 +17,7 @@ module.exports = {
             globals: {
             },
             plugins: [
-                "nebulas-contract"
+                "nebulas"
             ],
             rules: {
                 "available-libs": 'error',
