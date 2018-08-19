@@ -12,4 +12,5 @@ yarn test
 setTimeout setInterval
 
 2. no-window
-    
+
+2. no-proxy
