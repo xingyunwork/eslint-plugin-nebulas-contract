@@ -1,24 +1,27 @@
-# Forbid the use of `Proxy`
+# Forbid the use of `window`
 
-Forbid the use of Proxy in smart contract
+Forbid the use of window in nebulas smart contract
 
 ### Fail
 
 ```js
-const handler = {
-  get(target, key) {
-    return Math.min(target[key], 0);
-  }
-};
-const object = new Proxy(variable, handler);
-object.a;
+var TestContract = function() {
+
+}
+
+TestContract.prototype = {
+    init: function () {
+        var name = window.name;
+    }
+}
+
+module.exports = TestContract;
 ```
 
 ### Pass
 
 ```js
-function positiveProperty(target, key) {
-  return Math.min(target[key], 0);
+var TestContract = function() {
 }
-positiveProperty(object, 'a');
+module.exports = TestContract;
 ```
