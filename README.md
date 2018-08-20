@@ -43,6 +43,14 @@ Configure it in `package.json`.
 <!-- RULES:END -->
 
 
+## Unit Tests
+
+```
+$ npm install
+$ npm run test
+```
+
+
 See [ESLint documentation](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) for more information about extending configuration files.
 
 MIT © [yucopowo](https://github.com/yucopowo)
