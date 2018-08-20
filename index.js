@@ -1,13 +1,10 @@
 'use strict'
 
+const reqAll = require('req-all');
+const rules = reqAll('rules', {camelize: false});
+
 module.exports = {
-    rules: {
-        "available-libs": require('./rules/available-libs'),
-        "no-async": require('./rules/no-async'),
-        "no-import": require('./rules/no-import'),
-        "no-proxy": require('./rules/no-proxy'),
-        "no-window": require('./rules/no-window'),
-    },
+    rules: rules,
     configs: {
         recommended: {
             // env: {
@@ -19,13 +16,13 @@ module.exports = {
             plugins: [
                 "nebulas-contract"
             ],
-            rules: {
-                "nebulas-contract/available-libs": 'error',
-                "nebulas-contract/no-async": 'error',
-                "nebulas-contract/no-import": 'error',
-                "nebulas-contract/no-proxy": 'error',
-                "nebulas-contract/no-window": 'error',
-            }
+            rules: (function () {
+                const recommended = {};
+                Object.keys(rules).forEach(function (name) {
+                    recommended[ 'nebulas-contract/'+name ] = 'error';
+                });
+                return recommended;
+            })()
         }
     }
 };

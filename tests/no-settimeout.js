@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../rules/no-async");
+const rule = require("../rules/no-settimeout");
 const RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ const RuleTester = require("eslint").RuleTester;
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-async", rule, {
+ruleTester.run("no-settimeout", rule, {
     valid: [
         "function Test(){}",
     ],
@@ -36,6 +36,14 @@ ruleTester.run("no-async", rule, {
             code: "var a=1;\nsetTimeout(() => {}, 100);",
             errors: [{
                 message: "Unexpected setTimeout.",
+                type: "CallExpression",
+            }],
+            parser: 'babel-eslint'
+        },
+        {
+            code: "var a=1;\nsetInterval(() => {}, 100);",
+            errors: [{
+                message: "Unexpected setInterval.",
                 type: "CallExpression",
             }],
             parser: 'babel-eslint'

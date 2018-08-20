@@ -7,7 +7,7 @@
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
-const docUtils = require("../util/doc-utils");
+const docUtils = require("./util/doc-utils");
 const astUtils = require("eslint/lib/util/ast-utils");
 const getPropertyName = astUtils.getPropertyName;
 
@@ -21,7 +21,7 @@ const getPropertyName = astUtils.getPropertyName;
  * @returns {boolean} Whether or not the name is prohibited.
  */
 function isProhibitedIdentifier(name) {
-    return /^(setInterval|setTimeout)$/.test(name);
+    return /^(setTimeout|setInterval)$/.test(name);
 }
 
 /**
@@ -76,10 +76,8 @@ function isGlobalThisReferenceOrGlobalWindow(scope, node) {
 module.exports = {
     meta: {
         docs: {
-            description: "disallow the use of `setInterval`, `setTimeout`",
-            category: "Best Practices",
-            recommended: false,
-            url: docUtils.url('no-async')
+            description: "disallow the use of `setTimeout`, `setInterval`",
+            url: docUtils.url('no-settimeout')
         },
 
         schema: [],

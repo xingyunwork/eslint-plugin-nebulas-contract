@@ -7,7 +7,8 @@ function isRequire(node) {
 }
 
 function isAvailableLib(arg) {
-    return arg.type === 'Literal' && arg.value === 'crypto.js';
+    return arg.type === 'Literal' &&
+        ( arg.value === 'crypto.js' || arg.value === 'crypto');
 }
 
 module.exports = {
