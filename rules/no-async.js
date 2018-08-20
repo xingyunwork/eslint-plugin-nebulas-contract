@@ -7,6 +7,7 @@
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
+const docUtils = require("../util/doc-utils");
 const astUtils = require("eslint/lib/util/ast-utils");
 const getPropertyName = astUtils.getPropertyName;
 
@@ -78,7 +79,7 @@ module.exports = {
             description: "disallow the use of `setInterval`, `setTimeout`",
             category: "Best Practices",
             recommended: false,
-            url: "https://eslint.org/docs/rules/no-alert"
+            url: docUtils.url('no-async')
         },
 
         schema: [],
