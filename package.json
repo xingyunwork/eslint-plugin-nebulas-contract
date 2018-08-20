@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/module-exports.js"
+    "test1": "mocha tests/contract-init.js"
   },
   "main": "index.js",
   "files": [
@@ -32,7 +32,11 @@
     "eslint": ">=5.4.0"
   },
   "dependencies": {
+    "bignumber.js": "^7.2.1",
+    "context-eval": "^0.1.0",
     "eslint": "^5.4.0",
+    "extend": "^3.0.2",
+    "node-localstorage": "^1.3.1",
     "req-all": "^1.0.0"
   }
 }
