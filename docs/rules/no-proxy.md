@@ -5,20 +5,28 @@ Forbid the use of Proxy in smart contract
 ### Fail
 
 ```js
-const handler = {
-  get(target, key) {
-    return Math.min(target[key], 0);
-  }
-};
-const object = new Proxy(variable, handler);
-object.a;
+var TestContract = function() {
+}
+module.exports = TestContract;
 ```
 
 ### Pass
 
 ```js
-function positiveProperty(target, key) {
-  return Math.min(target[key], 0);
+var TestContract = function() {
+
 }
-positiveProperty(object, 'a');
+
+TestContract.prototype = {
+    init: function () {
+        var o = {name: 1};
+        var p = new Proxy(o, {
+            get: function(target, prop, receiver){
+                return target['name'];
+            }
+        });
+    }
+}
+
+module.exports = TestContract;
 ```

@@ -38,7 +38,7 @@ Configure it in `package.json`.
 
 <!-- RULES:START -->
 - [no-window](docs/rules/no-window.md) - Forbid the use of `window`.
-
+- [no-proxy](docs/rules/no-proxy.md) - Forbid the use of `Proxy`.
 
 <!-- RULES:END -->
 
