@@ -6,14 +6,6 @@ Forbid the use of Proxy in smart contract
 
 ```js
 var TestContract = function() {
-}
-module.exports = TestContract;
-```
-
-### Pass
-
-```js
-var TestContract = function() {
 
 }
 
@@ -28,5 +20,13 @@ TestContract.prototype = {
     }
 }
 
+module.exports = TestContract;
+```
+
+### Pass
+
+```js
+var TestContract = function() {
+}
 module.exports = TestContract;
 ```
