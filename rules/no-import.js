@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for no-settimeout rule.
+ * @fileoverview Tests for no-import rule.
  * @author yucopowo@gmail.com
  */
 

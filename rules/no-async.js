@@ -1,5 +1,5 @@
 /**
- * @fileoverview Rule to flag use of alert, confirm, prompt
+ * @fileoverview Rule to flag use of setInterval, setTimeout
  * @author yucopowo@gmail.com
  */
 "use strict";

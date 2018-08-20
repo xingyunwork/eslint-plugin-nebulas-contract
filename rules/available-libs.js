@@ -7,12 +7,8 @@ function isRequire(node) {
 }
 
 function isAvailableLib(arg) {
-    // return arg.type === 'Literal' ||
-    //     (arg.type === 'TemplateLiteral' && arg.expressions.length === 0)
     return arg.type === 'Literal' && arg.value === 'crypto.js';
-    // return true;
 }
-
 
 module.exports = {
     meta: {

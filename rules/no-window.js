@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for no-settimeout rule.
+ * @fileoverview Tests for no-window rule.
  * @author yucopowo@gmail.com
  */
 

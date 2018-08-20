@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-nebulas-contract",
   "version": "0.0.7",
-  "description": "ESLint shareable config for the Nebulas smart contract style",
+  "description": "Additional ESLint's rules for Nebulas Smart Contracts",
   "license": "MIT",
   "repository": "https://github.com/xingyunwork/eslint-plugin-nebulas-contract",
   "author": "yucopowo <yucopowo@gmail.com>",
@@ -25,8 +25,6 @@
   ],
   "devDependencies": {
     "babel-eslint": "^8.2.6",
-    "eslint-config-eslint": "^3.0.0",
-    "eslint-plugin-node": "^4.0.1",
     "mocha": "^3.1.0"
   },
   "peerDependencies": {
