@@ -25,9 +25,10 @@ module.exports = TestContract;
 ```
 
 ### Pass
-var crypto = require('crypto.js');
 
 ```js
+var crypto = require('crypto.js');
+
 var TestContract = function() {}
 module.exports = TestContract;
 ```
