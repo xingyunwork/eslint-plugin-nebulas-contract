@@ -10,21 +10,21 @@ module.exports = {
     },
     configs: {
         recommended: {
-            env: {
-                "es6": true,
-                "node": true
-            },
-            globals: {
-            },
+            // env: {
+            //     "es6": true,
+            //     "node": true
+            // },
+            // globals: {
+            // },
             plugins: [
-                "nebulas"
+                "nebulas-contract"
             ],
             rules: {
-                "available-libs": 'error',
-                "no-async": 'error',
-                "no-import": 'error',
-                "no-proxy": 'error',
-                "no-window": 'error',
+                "nebulas-contract/available-libs": 'error',
+                "nebulas-contract/no-async": 'error',
+                "nebulas-contract/no-import": 'error',
+                "nebulas-contract/no-proxy": 'error',
+                "nebulas-contract/no-window": 'error',
             }
         }
     }

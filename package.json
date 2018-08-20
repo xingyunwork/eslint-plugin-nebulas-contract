@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-nebulas-contract",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "ESLint shareable config for the Nebulas smart contract style",
   "license": "MIT",
   "repository": "https://github.com/xingyunwork/eslint-plugin-nebulas-contract",
@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "test": "mocha tests/**/*.js"
   },
-  "main": "lib/index.js",
+  "main": "index.js",
   "files": [
     "index.js",
     "rules"
@@ -20,11 +20,7 @@
   "keywords": [
     "nebulas",
     "contract",
-    "quality",
-    "style",
-    "lint",
-    "linter",
-    "jscs",
+    "eslintplugin",
     "eslint"
   ],
   "devDependencies": {
