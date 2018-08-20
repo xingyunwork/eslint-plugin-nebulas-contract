@@ -40,7 +40,7 @@ Configure it in `package.json`.
 - [no-window](docs/rules/no-window.md) - Forbid the use of `window`.
 - [no-proxy](docs/rules/no-proxy.md) - Forbid the use of `Proxy`.
 - [no-es6-modules](docs/rules/no-es6-modules.md) - Forbid ES2015 modules usage.
-- [no-settimeout.md](docs/rules/no-settimeout.md) - Forbid the use of `setInterval` `setTimeout`.
+- [no-settimeout](docs/rules/no-settimeout.md) - Forbid the use of `setInterval` `setTimeout`.
 - [no-module-exports](docs/rules/no-module-exports.md) - `module.exports = ` is necessary inside of contract.
 - [available-libs](docs/rules/available-libs.md) - Available libraries are `crypto.js`.
 
