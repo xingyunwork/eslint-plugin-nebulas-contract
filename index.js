@@ -7,12 +7,20 @@ module.exports = {
     rules: rules,
     configs: {
         recommended: {
-            // env: {
-            //     "es6": true,
-            //     "node": true
-            // },
-            // globals: {
-            // },
+            env: {
+                "es6": true
+            },
+            globals: {
+                "console": true,
+                "LocalContractStorage": true,
+                "BigNumber": true,
+                "Blockchain": true,
+                "Event": true,
+                "Math": true,
+                "Date": true,
+                "Uint": true,
+                "require": true,
+            },
             plugins: [
                 "nebulas-contract"
             ],
