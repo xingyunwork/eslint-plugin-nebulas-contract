@@ -1,6 +1,6 @@
-# Forbid the use of `import`
+# Forbid ES2015 modules usage.
 
-Forbid the use of import in nebulas smart contract
+Forbid ES2015 modules usage
 
 ### Fail
 
