@@ -1,6 +1,6 @@
 # Forbid the use of `Proxy`
 
-Forbid the use of Proxy in smart contract
+Forbid the use of Proxy in nebulas smart contract
 
 ### Fail
 
