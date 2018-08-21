@@ -36,6 +36,8 @@ _global.Event = require("./libs/event");
 // _global.Math.random = require('./libs/random');
 // _global.BigNumber.random = _global.Math.random;
 
+_global.Uint = require("./libs/uint");
+
 // module.exports = {
 //     context: _global.context
 // };

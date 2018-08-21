@@ -7,7 +7,8 @@ var native = require("./native");
 var BigNumber = native.BigNumber,
     Blockchain = native.Blockchain,
     LocalContractStorage = native.LocalContractStorage,
-    Event = native.Event;
+    Event = native.Event,
+    Uint = native.Uint;
 
 var funcRegex = new RegExp("^[a-zA-Z$][A-Za-z0-9_$]*$");
 
@@ -27,7 +28,8 @@ function compiler(source) {
         'BigNumber',
         'Blockchain',
         'LocalContractStorage',
-        'Event'
+        'Event',
+        'Uint'
 
         , source)).apply(context,
         [
@@ -40,7 +42,8 @@ function compiler(source) {
             BigNumber,
             Blockchain,
             LocalContractStorage,
-            Event
+            Event,
+            Uint
         ]);
 
     return module.exports;
