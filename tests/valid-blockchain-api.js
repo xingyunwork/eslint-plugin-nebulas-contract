@@ -37,6 +37,7 @@ ruleTester.run("valid-blockchain-api", rule, {
         "var hash = Blockchain.getPreBlockHash(offset);",
         "var seed = Blockchain.getPreBlockSeed(offset);",
 
+        "var kvStore  = new Blockchain.Contract(address);",
     ],
     invalid: [
 

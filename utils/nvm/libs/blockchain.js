@@ -67,5 +67,6 @@ Blockchain.prototype = {
     getPreBlockHash: function (offset) {},
     getPreBlockSeed: function (offset) {},
 
+    Contract: function (address) {},
 };
 module.exports = new Blockchain();
