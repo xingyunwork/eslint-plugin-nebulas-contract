@@ -2,6 +2,8 @@
 
 disallow the use of `setInterval`, `setTimeout` in nebulas smart contract
 
+Call: ReferenceError: setTimeout is not defined
+
 ### Fail
 
 ```js
