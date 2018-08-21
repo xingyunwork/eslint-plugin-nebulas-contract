@@ -37,8 +37,14 @@ module.exports = {
 
         var nvm = new NVM();
         let message = null;
-        if( !nvm.checkInit(sourceCode.text) ){
-            message = 'smart contract code must have an init() method.'
+
+        try {
+            if( !nvm.checkInit(sourceCode.text) ){
+                message = 'smart contract code must have an init() method.'
+            }
+        }
+        catch (e) {
+
         }
 
         return {
