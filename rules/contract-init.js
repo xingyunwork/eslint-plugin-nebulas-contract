@@ -35,14 +35,33 @@ module.exports = {
 
     create(context) {
         var sourceCode = context.getSourceCode();
+
+
         var nvm = new NVM();
         let message = null;
-        if( !nvm.checkInit(sourceCode) ){
+        if( !nvm.checkInit(sourceCode.text) ){
             message = 'smart contract code must have an init() method.'
         }
 
+
+
+
         return {
             Program(node) {
+
+                // message = (function () {
+                //
+                //     var module = {
+                //         exports: null
+                //     };
+                //
+                //     new Function('module', sourceCode.text).apply({},
+                //         [
+                //             module
+                //         ]);
+                //
+                //     return typeof module.exports;
+                // })();
 
                 if(message){
                     context.report({ node, message: message });
