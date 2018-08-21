@@ -31,7 +31,42 @@ module.exports = {
 
     create: function (context) {
         return {
-            MemberExpression(node) {
+
+            Identifier(node) {
+
+                const parent = node.parent;
+                if(parent
+                    && parent.type === 'MemberExpression'
+                    && parent.object
+                    && parent.object.type === 'Identifier'
+                    && parent.object.name === 'Event'
+                    && node.name !== 'Event') {
+
+                    let property = node.name;
+                    if( !NVM.checkEventApi(property) ) {
+
+                        context.report({
+                            node,
+                            message: "Unexpected Event property {{name}}",
+                            data:{
+                                name: property
+                            }
+                        });
+
+                    }
+
+
+
+                }
+
+
+                // if( node.type === 'Identifier'
+                //     && node.object.name === 'Event') {
+                // }
+
+            },
+
+            /*MemberExpression(node) {
 
                 // find LocalContractStorage.defineProperties arguments ObjectExpression
 
@@ -66,7 +101,7 @@ module.exports = {
 
 
 
-            },
+            },*/
         }
     },
 };

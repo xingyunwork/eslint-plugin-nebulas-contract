@@ -29,8 +29,10 @@ ruleTester.run("valid-event-api", rule, {
         {
             code: "Event.trigger('transfer', {});",
             errors: [{
+                column: 7,
+                line: 1,
                 message: 'Unexpected Event property trigger',
-                type: "MemberExpression"
+                type: "Identifier"
             }]
         }
 
