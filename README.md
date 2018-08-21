@@ -47,6 +47,8 @@ Configure it in `package.json`.
 
 - [valid-blockchain-api](docs/rules/valid-blockchain-api.md) -  The Blockchain API check is provided.
 - [valid-local-contract-storage-api](docs/rules/valid-local-contract-storage-api.md) -  The LocalContractStorage API check is provided.
+- [valid-event-api](docs/rules/valid-event-api.md) -  The Event API check is provided.
+
 
 
 

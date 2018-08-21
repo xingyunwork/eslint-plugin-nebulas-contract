@@ -75,6 +75,10 @@ NVM.checkLocalContractStorageApi = function (dotSeparatedKeys) {
     return t(LocalContractStorage, dotSeparatedKeys).isDefined;
 };
 
+NVM.checkEventApi = function (dotSeparatedKeys) {
+    return t(Event, dotSeparatedKeys).isDefined;
+};
+
 
 NVM.prototype = {
     deploy: function(source, args) {

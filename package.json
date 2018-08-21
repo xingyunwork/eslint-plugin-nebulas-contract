@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/valid-local-contract-storage-api.js"
+    "test1": "mocha tests/valid-event-api.js"
   },
   "main": "index.js",
   "files": [
