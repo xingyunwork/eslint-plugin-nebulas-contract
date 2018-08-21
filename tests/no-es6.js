@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for no-es6-modules rule.
+ * @fileoverview Tests for no-es6 rule.
  * @author yucopowo@gmail.com
  */
 
@@ -37,6 +37,15 @@ ruleTester.run("no-es6", rule, {
                 message: 'Unexpected default export statement. Use module.exports instead.'
             }],
             parser: 'babel-eslint'
+        },
+        {
+            code: "class TestContract{}\nexport default foo;",
+            errors: [{
+                message: 'Unexpected default export statement. Use module.exports instead.'
+            }],
+            parser: 'babel-eslint'
         }
     ],
 });
+
+
