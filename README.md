@@ -43,9 +43,8 @@ Configure it in `package.json`.
 - [no-settimeout](docs/rules/no-settimeout.md) - Forbid the use of `setInterval` `setTimeout`.
 
 - [available-libs](docs/rules/available-libs.md) - Available libraries are `crypto.js`.
-- [module-exports](docs/rules/no-module-exports.md) - The Smart contract code must have an init().
-
-- [contract-init](docs/rules/contract-init.md) - `module.exports = ` is necessary inside of contract.
+- [contract-init](docs/rules/contract-init.md) - The Smart contract code must have an init().
+- [module-exports](docs/rules/no-module-exports.md) - `module.exports = ` is necessary inside of contract.
 
 <!-- RULES:END -->
 
