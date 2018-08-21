@@ -11,6 +11,7 @@
 
 var NVM = require('./util/nvm/nvm');
 
+// var getModuleExports  = require('./util/util').getModuleExports;
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
@@ -47,12 +48,59 @@ module.exports = {
 
         }
 
-        return {
-            Program(node) {
+        let moduleExportsName = '';
+        /*Program(node) {
+                moduleExportsName = getModuleExports(node.body)
+            },
+            VariableDeclarator(node) {
 
-                if(message){
+
+                if(message && moduleExportsName == ){
                     context.report({ node, message: message });
                 }
+            }
+
+            MemberExpression(node) {
+
+                if(
+                    node.object.type === "Identifier"
+                    && node.object.name === "module"
+
+                    && node.property.type === "Identifier"
+                    && node.property.name === "exports"
+
+                    && message
+                ) {
+                    context.report({ node: node.parent , message: message });
+                }
+            }
+        */
+
+        return {
+            Identifier(cnode) {
+                let node = cnode.parent.left;
+
+                if( node && node.type === "MemberExpression" && node.object && node.property ) {
+
+                    if(
+
+
+
+                        node.object.type === "Identifier"
+                        && node.object.name === "module"
+
+                        && node.property.type === "Identifier"
+                        && node.property.name === "exports"
+
+                        && message
+                    ) {
+                        context.report({ node: cnode , message: message });
+                    }
+
+
+                }
+
+
 
             }
         }

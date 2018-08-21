@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-nebulas-contract",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "description": "Additional ESLint's rules for Nebulas Smart Contracts",
   "license": "MIT",
   "repository": "https://github.com/xingyunwork/eslint-plugin-nebulas-contract",
@@ -32,6 +32,7 @@
     "eslint": ">=5.4.0"
   },
   "dependencies": {
+    "bignumber.js": "^7.2.1",
     "eslint": "^5.4.0",
     "req-all": "^1.0.0"
   }

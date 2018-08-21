@@ -30,11 +30,13 @@ ruleTester.run("contract-init", rule, {
     ],
     invalid: [
         {
-            code: 'var TestContract = function(){};module.exports = TestContract;',
+            code: 'var TestContract = function(){};\nmodule.exports = TestContract;',
             errors: [{
                 ruleId: 'contract-init',
+                column: 18,
+                line: 2,
                 message: "smart contract code must have an init() method.",
-                type: "Program",
+                type: "Identifier",
             }],
         },
 

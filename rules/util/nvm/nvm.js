@@ -1,6 +1,6 @@
 "use strict";
 
-var extend = require('extend');
+// var extend = require('extend');
 // var native, {BigNumber, Blockchain, LocalContractStorage, Event} = require("./native");
 var native = require("./native");
 
