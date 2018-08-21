@@ -3,13 +3,15 @@
 var block = {
     timestamp: 0,
     height: 1,
-    seed: "s"
+    seed: "s",
+    coinbase: 1,
+    hash: 'hash'
 };
 
 var transaction = {
-    hash: "",
-    from: "",
-    to: "",
+    hash: "hash",
+    from: "from",
+    to: "to",
     value: "0",
     nonce: 1,
     timestamp: 0,

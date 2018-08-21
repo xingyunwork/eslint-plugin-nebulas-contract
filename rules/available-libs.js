@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Rule to control usage of available libs.
+ * @author yucopowo@gmail.com
+ */
+
+
 function isRequire(node) {
     return node &&
         node.callee &&

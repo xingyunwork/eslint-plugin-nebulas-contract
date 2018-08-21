@@ -1,6 +1,6 @@
 /**
  * @fileoverview Rule to control usage of module-exports.
- * @author Brandon Mills
+ * @author yucopowo@gmail.com
  */
 
 "use strict";
@@ -36,16 +36,13 @@ module.exports = {
     create(context) {
         var sourceCode = context.getSourceCode();
 
-        var nvm = new NVM();
         let message = null;
-
         try {
-            if( !nvm.checkInit(sourceCode.text) ){
+            if( !NVM.checkInit(sourceCode.text) ){
                 message = 'smart contract code must have an init() method.'
             }
         }
         catch (e) {
-
         }
 
         let moduleExportsName = '';
@@ -83,9 +80,6 @@ module.exports = {
                 if( node && node.type === "MemberExpression" && node.object && node.property ) {
 
                     if(
-
-
-
                         node.object.type === "Identifier"
                         && node.object.name === "module"
 
@@ -96,12 +90,7 @@ module.exports = {
                     ) {
                         context.report({ node: cnode , message: message });
                     }
-
-
                 }
-
-
-
             }
         }
     }

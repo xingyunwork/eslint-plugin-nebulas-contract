@@ -19,7 +19,7 @@
 'use strict';
 
 const _native_blockchain = require("../native/blockchain");
-
+const BigNumber = require("bignumber.js");
 
 
 
@@ -61,6 +61,11 @@ Blockchain.prototype = {
     },
     verifyAddress: function (address) {
         return this.nativeBlockchain.verifyAddress(address);
-    }
+    },
+
+    getAccountState: function (address) {},
+    getPreBlockHash: function (offset) {},
+    getPreBlockSeed: function (offset) {},
+
 };
 module.exports = new Blockchain();

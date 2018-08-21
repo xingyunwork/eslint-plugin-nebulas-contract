@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/no-es6.js"
+    "test1": "mocha tests/valid-blockchain-api.js"
   },
   "main": "index.js",
   "files": [

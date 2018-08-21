@@ -1,6 +1,6 @@
 /**
  * @fileoverview Rule to control usage of module-exports.
- * @author Brandon Mills
+ * @author yucopowo@gmail.com
  */
 
 "use strict";

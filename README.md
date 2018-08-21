@@ -45,6 +45,9 @@ Configure it in `package.json`.
 - [contract-init](docs/rules/contract-init.md) - The Smart contract code must have an init().
 - [module-exports](docs/rules/no-module-exports.md) - `module.exports = ` is necessary inside of contract.
 
+- [valid-blockchain-api](docs/rules/valid-blockchain-api.md) -  The Blockchain API check is provided.
+
+
 <!-- RULES:END -->
 
 

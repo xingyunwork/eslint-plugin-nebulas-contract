@@ -1,9 +1,9 @@
 "use strict";
 
-// var extend = require('extend');
+var extend = require('extend');
+var t = require('./util/t');
 // var native, {BigNumber, Blockchain, LocalContractStorage, Event} = require("./native");
 var native = require("./native");
-
 var BigNumber = native.BigNumber,
     Blockchain = native.Blockchain,
     LocalContractStorage = native.LocalContractStorage,
@@ -51,6 +51,24 @@ var NVM = function (block, transaction) {
     // extend(native.context.transaction, transaction);
     // console.log("block:", native.context.block);
     // console.log("tx:", native.context.transaction);
+};
+
+
+NVM.checkInit = function (source) {
+    const Contract = compiler(source);
+    return Contract.prototype.hasOwnProperty('init');
+};
+
+
+
+
+
+NVM.checkBlockchain = function (dotSeparatedKeys) {
+    Blockchain.blockParse(JSON.stringify(native.context.block));
+    Blockchain.transactionParse(JSON.stringify(native.context.transaction));
+    // const hasProperty = Blockchain.hasOwnProperty(method);
+    // return hasProperty?hasProperty:!!Blockchain[method];
+    return t(Blockchain, dotSeparatedKeys).isDefined;
 };
 
 NVM.prototype = {
