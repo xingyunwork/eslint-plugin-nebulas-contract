@@ -6,7 +6,7 @@
   "repository": "https://github.com/xingyunwork/eslint-plugin-nebulas-contract",
   "author": "yucopowo <yucopowo@gmail.com>",
   "engines": {
-    "node": ">=6"
+    "node": "^6.14.0 || ^8.10.0 || >=9.10.0"
   },
   "scripts": {
     "lint": "eslint .",
