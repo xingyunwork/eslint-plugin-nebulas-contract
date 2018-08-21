@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../rules/no-es6-modules");
+const rule = require("../rules/no-es6");
 const RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ const RuleTester = require("eslint").RuleTester;
 
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-es6-modules", rule, {
+ruleTester.run("no-es6", rule, {
     valid: [
         "var crypto = require('crypto.js');",
         "var TestContract = function() {}\nmodule.exports = TestContract;",

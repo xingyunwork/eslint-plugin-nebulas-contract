@@ -1,6 +1,6 @@
-# Forbid ES2015 modules usage.
+# Forbid some ES2015 modules usage.
 
-Forbid ES2015 modules usage
+Forbid some ES2015 modules usage
 
 ### Fail
 

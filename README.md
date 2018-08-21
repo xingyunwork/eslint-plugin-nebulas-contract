@@ -38,8 +38,7 @@ Configure it in `package.json`.
 
 <!-- RULES:START -->
 - [no-window](docs/rules/no-window.md) - Forbid the use of `window`.
-- [no-proxy](docs/rules/no-proxy.md) - Forbid the use of `Proxy`.
-- [no-es6-modules](docs/rules/no-es6-modules.md) - Forbid ES2015 modules usage.
+- [no-es6](docs/rules/no-es6-modules.md) - Forbid some ES2015 modules usage.
 - [no-settimeout](docs/rules/no-settimeout.md) - Forbid the use of `setInterval` `setTimeout`.
 
 - [available-libs](docs/rules/available-libs.md) - Available libraries are `crypto.js`.

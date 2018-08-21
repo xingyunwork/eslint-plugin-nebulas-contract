@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/contract-init.js"
+    "test1": "mocha tests/no-es6.js"
   },
   "main": "index.js",
   "files": [

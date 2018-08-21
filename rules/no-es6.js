@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for no-es6-modules rule.
+ * @fileoverview Tests for no-es6 rule.
  * @author yucopowo@gmail.com
  */
 
