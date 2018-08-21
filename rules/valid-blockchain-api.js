@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var NVM = require('./util/nvm/nvm');
+var NVM = require('../utils/nvm/nvm');
 
 // var getModuleExports  = require('./util/util').getModuleExports;
 //------------------------------------------------------------------------------
