@@ -21,11 +21,26 @@ const ruleTester = new RuleTester();
 
 ruleTester.run("valid-blockchain-api", rule, {
     valid: [
-        "Blockchain.block.coinbase",
-
+        "LocalContractStorage.rawGet",
+        "LocalContractStorage.rawSet",
+        "LocalContractStorage.defineProperty",
+        "LocalContractStorage.defineProperties",
+        "LocalContractStorage.defineMapProperty",
+        "LocalContractStorage.defineMapProperties",
+        "LocalContractStorage.del",
+        "LocalContractStorage.get",
+        "LocalContractStorage.set",
     ],
     invalid: [
 
+        {
+            code: "LocalContractStorage.defineMyProperties",
+            errors: [{
+                message: 'Unexpected LocalContractStorage property defineMyProperties',
+                type: "MemberExpression"
+            }],
+
+        }
 
     ],
 });

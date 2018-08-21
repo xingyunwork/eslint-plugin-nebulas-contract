@@ -46,6 +46,8 @@ Configure it in `package.json`.
 - [module-exports](docs/rules/no-module-exports.md) - `module.exports = ` is necessary inside of contract.
 
 - [valid-blockchain-api](docs/rules/valid-blockchain-api.md) -  The Blockchain API check is provided.
+- [valid-local-contract-storage-api](docs/rules/valid-local-contract-storage-api.md) -  The LocalContractStorage API check is provided.
+
 
 
 <!-- RULES:END -->

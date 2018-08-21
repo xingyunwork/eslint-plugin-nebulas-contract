@@ -71,11 +71,12 @@ NVM.checkBlockchain = function (dotSeparatedKeys) {
     return t(Blockchain, dotSeparatedKeys).isDefined;
 };
 
+NVM.checkLocalContractStorageApi = function (dotSeparatedKeys) {
+    return t(LocalContractStorage, dotSeparatedKeys).isDefined;
+};
+
+
 NVM.prototype = {
-    checkInit(source) {
-        const Contract = compiler(source);
-        return Contract.prototype.hasOwnProperty('init');
-    },
     deploy: function(source, args) {
         return this.run(source, "init", args);
     },
