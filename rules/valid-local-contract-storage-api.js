@@ -20,9 +20,6 @@ var NVM = require('../utils/nvm/nvm');
 // Rule Definition
 //------------------------------------------------------------------------------
 
-
-
-
 module.exports = {
     meta: {
         docs: {
@@ -31,42 +28,28 @@ module.exports = {
 
     create: function (context) {
         return {
-            MemberExpression(node) {
+            Identifier(node) {
 
-                // find LocalContractStorage.defineProperties arguments ObjectExpression
+                const parent = node.parent;
+                if(parent
+                    && parent.type === 'MemberExpression'
+                    && parent.object
+                    && parent.object.type === 'Identifier'
+                    && parent.object.name === 'LocalContractStorage'
+                    && node.name !== 'LocalContractStorage') {
 
+                    let property = node.name;
+                    if( !NVM.checkLocalContractStorageApi(property) ) {
 
-                if(node.object
-                    && node.object.type === 'Identifier'
-                    && node.object.name === 'LocalContractStorage') {
-
-                    if(node.property
-                        && node.property.type === 'Identifier') {
-
-                        let property = node.property.name;
-                        if( !NVM.checkLocalContractStorageApi(property) ) {
-
-                            context.report({
-                                node,
-                                message: "Unexpected LocalContractStorage property {{name}}",
-                                data:{
-                                    name: property
-                                }
-                            });
-
-                        }
-
-
-
-
+                        context.report({
+                            node,
+                            message: "Unexpected LocalContractStorage property {{name}}",
+                            data:{
+                                name: property
+                            }
+                        });
                     }
-
-
                 }
-
-
-
-
             },
         }
     },

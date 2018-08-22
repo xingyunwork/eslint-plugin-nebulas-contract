@@ -32,16 +32,16 @@ ruleTester.run("valid-blockchain-api", rule, {
         "LocalContractStorage.set",
     ],
     invalid: [
-
         {
             code: "LocalContractStorage.defineMyProperties",
             errors: [{
+                column: 22,
+                line: 1,
                 message: 'Unexpected LocalContractStorage property defineMyProperties',
-                type: "MemberExpression"
+                type: "Identifier"
             }],
 
         }
-
     ],
 });
 
