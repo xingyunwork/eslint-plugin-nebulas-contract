@@ -56,6 +56,24 @@ var NVM = function (block, transaction) {
     // console.log("tx:", native.context.transaction);
 };
 
+NVM.checkContract = function (source) {
+
+    const Contract = compiler(source);
+
+    if(Contract === null){
+        return null;
+    }
+
+    if(typeof Contract !== 'function' || !Contract.prototype){
+        return 'Contract must be a Prototype Object or Class in JavaScript or TypeScript.';
+    }
+
+    if(!Contract.prototype.init){
+        return 'A Contract must include an init function.';
+    }
+
+    return null;
+};
 
 NVM.checkInit = function (source) {
     const Contract = compiler(source);
