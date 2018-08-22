@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/module-exports.js"
+    "test1": "mocha tests/no-dupe-keys-in-local-contract-storage.js"
   },
   "main": "index.js",
   "files": [

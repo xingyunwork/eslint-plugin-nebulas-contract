@@ -49,6 +49,7 @@ Configure it in `package.json`.
 - [valid-local-contract-storage-api](docs/rules/valid-local-contract-storage-api.md) -  The LocalContractStorage API check is provided.
 - [valid-event-api](docs/rules/valid-event-api.md) -  The Event API check is provided.
 
+- [no-dupe-keys-in-local-contract-storage.md](docs/rules/no-dupe-keys-in-local-contract-storage.md) -  disallow duplicate keys in LocalContractStorage.
 
 
 
