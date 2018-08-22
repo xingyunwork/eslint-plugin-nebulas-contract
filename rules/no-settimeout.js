@@ -8,8 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 const docUtils = require("../utils/doc-utils");
-const astUtils = require("eslint/lib/util/ast-utils");
-const getPropertyName = astUtils.getPropertyName;
+const getPropertyName = require("../utils/util").getStaticPropertyName;
 
 //------------------------------------------------------------------------------
 // Helpers
