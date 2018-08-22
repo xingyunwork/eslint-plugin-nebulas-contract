@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/valid-event-api.js"
+    "test1": "mocha tests/module-exports.js"
   },
   "main": "index.js",
   "files": [

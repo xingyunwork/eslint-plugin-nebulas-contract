@@ -32,8 +32,10 @@ ruleTester.run("module-exports", rule, {
             }]
         },
         {
-            code: "var TestContract = function() {} \n module.export = TestContract",
+            code: "var TestContract = function() {}\nmodule.export = TestContract;",
             errors: [{
+                column: 30,
+                line: 2,
                 message: '`module.exports = ` is necessary inside of contract.'
             }]
         },

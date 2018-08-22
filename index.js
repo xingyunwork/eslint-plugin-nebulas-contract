@@ -20,6 +20,7 @@ module.exports = {
                 "Date": true,
                 "Uint": true,
                 "require": true,
+                "module": true
             },
             plugins: [
                 "nebulas-contract"

@@ -35,6 +35,19 @@ function getModuleExports(statements) {
     return directives;
 }
 
+function getLastLocation(sourceCode) {
+    if( !sourceCode.lines || sourceCode.lines.length === 0 ){
+        return {
+            column: 0,
+            line: 0
+        }
+    }
+    let lastLine = sourceCode.lines.slice(-1);
+    return {
+        column: lastLine.length>0?lastLine[0].length:0,
+        line: sourceCode.lines.length
+    };
+}
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
@@ -52,11 +65,23 @@ module.exports = {
     },
 
     create(context) {
+        const sourceCode = context.getSourceCode();
+        const src = sourceCode.getText();
+
+        if (!src.length) {
+            return;
+        }
+
+        const location = getLastLocation(sourceCode);
         return {
-            Program(node) {
+            'Program': function(node) {
                 const directives = getModuleExports(node.body);
                 if (node.body.length > 0 && directives.length === 0) {
-                    context.report({ node, message: '`module.exports = ` is necessary inside of contract.' });
+                    context.report({
+                        node,
+                        loc: location,
+                        message: '`module.exports = ` is necessary inside of contract.'
+                    });
                 }
             }
         }
