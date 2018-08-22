@@ -45,6 +45,8 @@ Configure it in `package.json`.
 - [contract-init](docs/rules/contract-init.md) - The Smart contract code must have an init().
 - [module-exports](docs/rules/no-module-exports.md) - `module.exports = ` is necessary inside of contract.
 
+- [valid-contract](docs/rules/valid-contract.md) -  Contract must be a Prototype Object or Class in JavaScript or TypeScript , and include an init function.
+
 - [valid-blockchain-api](docs/rules/valid-blockchain-api.md) -  The Blockchain API check is provided.
 - [valid-local-contract-storage-api](docs/rules/valid-local-contract-storage-api.md) -  The LocalContractStorage API check is provided.
 - [valid-event-api](docs/rules/valid-event-api.md) -  The Event API check is provided.

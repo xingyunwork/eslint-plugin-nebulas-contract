@@ -33,7 +33,7 @@ module.exports = {
     },
 
     create(context) {
-        var sourceCode = context.getSourceCode();
+        let sourceCode = context.getSourceCode();
 
         let message = null;
         try {
@@ -43,34 +43,32 @@ module.exports = {
             message = e.message;
         }
 
-        console.log("message:", message);
-
         return {
-            Identifier(cnode) {
 
-                console.log('===console.log(cnode);==');
-                console.log(cnode);
+            AssignmentExpression(node) {
 
+                if(!message){
+                    return;
+                }
 
-                let node = cnode.parent.left;
+                if( node.operator && node.operator === '='
 
-                console.log(node);
+                    && node.left
+                    && node.left.type === 'MemberExpression'
 
-                if( node && node.type === "MemberExpression" && node.object && node.property ) {
+                    && node.left.object
+                    && node.left.object.type === 'Identifier'
+                    && node.left.object.name === 'module'
 
-                    if(
-                        node.object.type === "Identifier"
-                        && node.object.name === "module"
+                    && node.left.property
+                    && node.left.property.type === 'Identifier'
+                    && node.left.property.name === 'exports'
 
-                        && node.property.type === "Identifier"
-                        && node.property.name === "exports"
-
-                        && message
-                    ) {
-                        context.report({ node: cnode , message: message });
-                    }
+                ) {
+                    context.report({ node: node.right , message: message });
                 }
             }
+
         }
     }
 };
