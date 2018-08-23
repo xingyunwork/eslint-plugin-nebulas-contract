@@ -42,9 +42,7 @@ Configure it in `package.json`.
 - [no-settimeout](docs/rules/no-settimeout.md) - Forbid the use of `setInterval` `setTimeout`.
 
 - [available-libs](docs/rules/available-libs.md) - Available libraries are `crypto.js`.
-- [contract-init](docs/rules/contract-init.md) - The Smart contract code must have an init().
 - [module-exports](docs/rules/no-module-exports.md) - `module.exports = ` is necessary inside of contract.
-
 - [valid-contract](docs/rules/valid-contract.md) -  Contract must be a Prototype Object or Class in JavaScript or TypeScript , and include an init function.
 
 - [valid-blockchain-api](docs/rules/valid-blockchain-api.md) -  The Blockchain API check is provided.
