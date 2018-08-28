@@ -89,26 +89,26 @@ module.exports = {
 
 
                 if(propertyName === 'defineProperties' || propertyName === 'defineMapProperties') {
-
                     const properties = node.arguments[1].properties;
-
-                    // const keys = {};
 
                     properties.forEach(function (property) {
 
-                        if( keys[property.key.name] ){
+                        let keyName = (property.key.type === 'Identifier')?
+                            property.key.name:property.key.value;
+
+                        if( keys[keyName] ){
 
                             context.report({
                                 node: property,
                                 message: "disallow duplicate keys in LocalContractStorage.",
                                 data:{
-                                    name: property.key.name
+                                    name: keyName
                                 }
                             });
 
                         }
                         else{
-                            keys[property.key.name] = propertyName;
+                            keys[keyName] = propertyName;
                         }
 
                     });

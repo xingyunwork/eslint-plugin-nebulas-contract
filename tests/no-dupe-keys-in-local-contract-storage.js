@@ -26,7 +26,7 @@ ruleTester.run("valid-blockchain-api", rule, {
         "LocalContractStorage.defineProperty(this, 'allocation');LocalContractStorage.defineMapProperty(this, 'allocation');",
 
 
-        "LocalContractStorage.defineProperties(this, {name: null, count: null});",
+        "LocalContractStorage.defineProperties(this, {name: null, 'count': null});",
     ],
     invalid: [
         {
