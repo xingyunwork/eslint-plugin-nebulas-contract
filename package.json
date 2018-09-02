@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/valid-uint-api.js"
+    "test1": "mocha tests/valid-crypto-api.js"
   },
   "main": "index.js",
   "files": [
