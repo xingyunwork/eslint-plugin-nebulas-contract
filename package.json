@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha tests/**/*.js",
-    "test1": "mocha tests/no-dupe-keys-in-local-contract-storage1.js"
+    "test1": "mocha tests/valid-uint-api.js"
   },
   "main": "index.js",
   "files": [
